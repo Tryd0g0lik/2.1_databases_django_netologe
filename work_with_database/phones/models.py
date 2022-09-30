@@ -16,4 +16,3 @@ class Phone(models.Model):
         return self.name
 
 
-
