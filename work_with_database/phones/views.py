@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from PIL import Image
 
 
 def index(request):
@@ -14,4 +15,4 @@ def show_catalog(request):
 def show_product(request, slug):
     template = 'product.html'
     context = {}
-    return render(request, template, context)
+    return render(request, template, context, )
