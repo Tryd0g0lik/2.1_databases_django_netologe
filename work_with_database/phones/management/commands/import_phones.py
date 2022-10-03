@@ -4,7 +4,7 @@ import json
 import time
 from django.core.management.base import BaseCommand
 from phones.models import Phone
-# from autoslug import AutoSlugField
+from autoslug import AutoSlugField
 
 
 class Command(BaseCommand):
@@ -23,7 +23,8 @@ class Command(BaseCommand):
                 image=phone['image'],
                 price=phone['price'],
                 release_date=phone['release_date'],
-                lte_exists=phone['lte_exists']
+                lte_exists=phone['lte_exists'],
+                # slug=phone['slug'],
             ).save()
         return
 
