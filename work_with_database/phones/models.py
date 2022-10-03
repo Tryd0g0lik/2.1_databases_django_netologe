@@ -11,7 +11,8 @@ class Phone(models.Model):
     price = models.PositiveIntegerField()
     release_date = models.DateField(auto_now_add=True) #format='%Y-%m-%d'
     lte_exists = models.BooleanField(default=True)
-    slug = AutoSlugField(populate_from = 'image', unique=True)
+    slug = AutoSlugField(populate_from = 'name',
+                         unique_with=['name'], unique=True)
 
     def __str__(self):
         return self.name
